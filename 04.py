@@ -8,10 +8,16 @@ Check if Coding For All string contains a word Coding using the method index, fi
 Replace the word coding in the string 'Coding For All' to Python
 Split the string 'Coding For All' using space as the separator (split()) .
 "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
+What is the character at index 0 in the string Coding For All.
+What is the last index of the string Coding For All.
+Create an acronym or an abbreviation for the name 'Coding For All'.
+The following list contains the names of some of python libraries: ['Django', 'Flask',  
+'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string.
 """
 
 str_var = "Coding For All"
 str_var_2 = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" 
+libraries =  ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
 
 print(str_var.upper())
 print(str_var.lower())
@@ -25,3 +31,7 @@ print(str_var.replace('Coding', 'Python'))
 print(str_var.split())
 print(str_var_2.split(','))
 print(str_var[0])
+print(str_var.rindex(str_var[-1]))
+print("".join(word[0] for word in str_var.split()))
+print("#".join(libraries))
+
