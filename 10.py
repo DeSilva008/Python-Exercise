@@ -156,4 +156,49 @@ This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order u
 
 # print(revrs_fruit)
 
+"""
+Go to the data folder and use the countries_data.py file.
+What are the total number of languages in the data
+"""
+
 from countries_data import details
+
+print(len(details))
+
+languages = []
+for x in range(len(details)):
+    languages.extend(details[x]['languages'])
+
+print(len(languages))
+languages.sort()
+print(languages)
+
+distinct_languages = set(map(lambda word: word.strip().lower(), languages))
+
+print(len(distinct_languages))
+print(distinct_languages)
+
+"""
+Find the ten most spoken languages from the data
+"""
+
+distinct_languages_list = list(distinct_languages)
+distinct_languages_list.sort()
+
+languages = [ word.strip().lower() for word in languages]
+print(languages)
+
+print(distinct_languages_list)
+
+count = {}
+for x in range(len(distinct_languages_list)):
+    count[distinct_languages_list[x]] = languages.count(distinct_languages_list[x])
+    print(f'{distinct_languages_list[x]} count = {languages.count(distinct_languages_list[x])}')
+
+print(count)
+
+top_10 = sorted(count.items(), key=lambda x: x[1], reverse=True)[:10]
+
+print(top_10)
+
+sorted
