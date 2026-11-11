@@ -56,37 +56,37 @@
 # print(uppercase_decorator(greeting)())
 
 
-# # ## Let us implement the example above with a decorator
+# Let us implement the example above with a decorator
 
-# '''This decorator function is a higher order function
-# that takes a function as a parameter'''
+'''This decorator function is a higher order function
+that takes a function as a parameter'''
 
-# def uppercase_decorator(function):
-#     def wrapper():
-#         func = function()
-#         make_uppercase = func.upper()
-#         return make_uppercase
-#     return wrapper
+def uppercase_decorator(function):
+    def wrapper():
+        func = function()
+        make_uppercase = func.upper()
+        return make_uppercase
+    return wrapper
 
-# @uppercase_decorator
-# def greeting():
-#     return 'Welcome to Python'
+@uppercase_decorator
+def greeting():
+    return 'Welcome to Python'
 
-# print(greeting())   # WELCOME TO PYTHON
+print(greeting())   # WELCOME TO PYTHON
 
 
 # print((lambda a,b : a+b)(2,3))
 
 
-def decorator_with_parameters(function):
-    def wrapper_accepting_parameters(para1, para2, para3):
-        function(para1, para2, para3)
-        print("I live in {}".format(para3))
-    return wrapper_accepting_parameters
+# def decorator_with_parameters(function):
+#     def wrapper_accepting_parameters(para1, para2, para3):
+#         function(para1, para2, para3)
+#         print("I live in {}".format(para3))
+#     return wrapper_accepting_parameters
 
-@decorator_with_parameters
-def print_full_name(first_name, last_name, country):
-    print("I am {} {}. I love to teach.".format(
-        first_name, last_name))
+# @decorator_with_parameters
+# def print_full_name(first_name, last_name, country):
+#     print("I am {} {}. I love to teach.".format(
+#         first_name, last_name))
 
-print_full_name("Asabeneh", "Yetayeh",'Finland')
+# print_full_name("Asabeneh", "Yetayeh",'Finland')
